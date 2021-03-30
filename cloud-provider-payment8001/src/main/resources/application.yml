@@ -10,6 +10,12 @@ spring:
     url: jdbc:mysql://localhost:3306/cloud2020?useSSL=false&useUnicode=true&characterEncoding=utf8
     username: root
     password: root
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      #采样率，0-1 ，1代表全采
+      probability: 1
 
 
 mybatis:
@@ -23,8 +29,9 @@ eureka:
     #是否抓取注册表
     fetch-registry: true
     service-url:
-#      defaultZone: http://localhost:7001/eureka
-      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+      defaultZone: http://localhost:7001/eureka
+#      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+
   instance:
     instance-id: payment8001
     prefer-ip-address: true   #访问路径显示IP地址

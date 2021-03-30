@@ -4,6 +4,12 @@ server:
 spring:
   application:
     name: cloud-order-service
+  zipkin:
+      base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      #采样率，0-1 ，1代表全采
+      probability: 1
 
 eureka:
   client:
@@ -11,4 +17,5 @@ eureka:
     fetch-registry: true
     service-url:
 #      defaultZone: http://localhost:7001/eureka
-      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+#      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+      defaultZone: http://eureka7001.com:7001/eureka
