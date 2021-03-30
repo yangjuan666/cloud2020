@@ -19,6 +19,7 @@ public class ConfigClientController {
      * github配置文件修改，config服务端立马生效，客户端需要配置一些信息，然后发送个post请求才管用
      * 配置完并不生效，必须发送  curl -X POST "http://localhost:3355/actuator/refresh"
      * bus 向server发送  curl -X POST "http://localhost:3344/actuator/bus-refresh"
+     * 定点通知   curl -X POST "http://localhost:3344/actuator/bus-refresh/config-client:3355"
      */
     @Value("${config.info}")
     private String configInfo;
